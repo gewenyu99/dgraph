@@ -19,7 +19,7 @@ on:
       - main
       - release/**
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "*/60 * * * *"
 
 permissions:
   contents: read
