@@ -19,7 +19,7 @@ on:
       - main
       - release/**
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/20 * * * *"
 
 permissions:
   contents: read
@@ -84,3 +84,5 @@ jobs:
           junit-paths: ./test-results.xml
           org-slug: totally-real-saas
           token: ${{ secrets.TRUNK_TOKEN }}
+        env:
+          TRUNK_PUBLIC_API_ADDRESS: https://api.trunk-staging.io
