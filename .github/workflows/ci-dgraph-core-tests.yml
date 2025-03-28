@@ -70,11 +70,15 @@ jobs:
           ./t -r
           # sleep
           sleep 5
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: ./test-results.xml
       - name: Upload Test Results
         if: always() # Upload the results even if the tests fail
         continue-on-error: true # don't fail this job if the upload fails
         uses: trunk-io/analytics-uploader@main
         with:
           junit-paths: ./test-results.xml
-          org-slug: hypermode
+          org-slug: totally-real-saas
           token: ${{ secrets.TRUNK_TOKEN }}
