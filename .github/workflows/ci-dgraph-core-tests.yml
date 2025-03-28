@@ -17,7 +17,7 @@ on:
       - main
       - release/**
   schedule:
-    - cron: 0 0 * * * # 1 run per day
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: read
